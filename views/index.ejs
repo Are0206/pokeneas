@@ -2,47 +2,178 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pokenea Filosófico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Flexo:wght@400;500;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --pk-red: #ee1515;
+      --pk-red-dark: #c40d0d;
+      --pk-text: #313131;
+      --pk-muted: #919191;
+      --pk-card-bg: #f2f2f2;
+      --pk-page-bg: #ffffff;
+      --pk-dark: #2b2b2b;
+      --pk-green: #9bcc50;
+      --pk-purple: #b97fc9;
+      --pk-orange: #fd7d24;
+      --pk-blue: #4592c4;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-family: "Flexo", "Rubik", "Trebuchet MS", Arial, sans-serif;
+      color: var(--pk-text);
+      background-color: var(--pk-dark);
+    }
+
+    /* Barra superior, como el portal de pokemon.com */
+    .topbar {
+      background: var(--pk-page-bg);
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .topbar .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background:
+        linear-gradient(to bottom, var(--pk-red) 0 45%, #222 45% 55%, #fff 55% 100%);
+      border: 2px solid #222;
+      position: relative;
+    }
+    .topbar .dot::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 6px;
+      height: 6px;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border: 2px solid #222;
+      border-radius: 50%;
+    }
+
+    /* Zona central con franjas diagonales a los lados */
+    main {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background-color: #f4f4f9;
-      margin: 0;
+      padding: 2rem 1rem;
+      background:
+        repeating-linear-gradient(
+          -60deg,
+          #ffffff 0 90px,
+          #f4f4f4 90px 120px
+        );
     }
+
     .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 400px;
+      width: 100%;
+      max-width: 340px;
+      background: transparent;
     }
-    img {
+
+    .card .image-box {
+      background: var(--pk-card-bg);
+      border-radius: 6px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .card .image-box img {
       max-width: 100%;
-      height: auto;
-      border-radius: 8px;
+      max-height: 100%;
+      object-fit: contain;
     }
-    blockquote {
-      font-style: italic;
-      color: #555;
-      margin: 1.5rem 0;
+
+    .card .number {
+      margin: 1rem 0 0.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--pk-muted);
+      letter-spacing: 0.02em;
     }
-    footer {
+
+    .card .title {
+      margin: 0 0 0.75rem;
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: var(--pk-text);
+      line-height: 1.15;
+    }
+
+    /* Etiquetas de tipo */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 1.25rem;
+    }
+    .tag {
       font-size: 0.8rem;
-      color: #888;
+      padding: 0.2rem 1.2rem;
+      color: #fff;
+      border-radius: 2px;
+      font-weight: 500;
     }
+
+    .phrase {
+      margin: 0 0 1.25rem;
+      padding-left: 0.9rem;
+      border-left: 4px solid var(--pk-red);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--pk-text);
+    }
+
+    .container-id {
+      display: inline-block;
+      background: var(--pk-red);
+      color: #fff;
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .container-id:hover { background: var(--pk-red-dark); }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="<%= image %>" alt="Pokenea" />
-    <p>"<%= philosophicalPhrase %>"</p>
-    <footer>Contenedor ID: <%= containerId %></footer>
-  </div>
+  <header class="topbar">
+    <span class="dot"></span>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="image-box">
+        <img src="<%= image %>" alt="Pokenea">
+      </div>
+
+      <p class="number">Pokenea Filosófico</p>
+
+      <p class="phrase">"<%= philosophicalPhrase %>"</p>
+
+      <span class="container-id">Contenedor ID: <%= containerId %></span>
+    </div>
+  </main>
 </body>
 </html>
