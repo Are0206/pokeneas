@@ -5,11 +5,13 @@ function show() {
   const pokenea = pokeneaRepository.getRandom();
   const containerId = containerService.getContainerId();
 
-  return {
+  const viewData = {
     image: pokenea.image,
     philosophicalPhrase: pokenea.philosophicalPhrase,
     containerId: containerId
   };
+
+  return res.render('index', viewData);
 }
 
 module.exports = {
