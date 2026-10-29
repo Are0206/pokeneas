@@ -1,7 +1,7 @@
 const containerService = require('../services/containerService');
 const pokeneaRepository = require('../repositories/pokeneaRepository');
 
-function show() {
+function show(request, res) {
   const pokenea = pokeneaRepository.getRandom();
   const containerId = containerService.getContainerId();
 
