@@ -1,3 +1,4 @@
+const containerService = require('../services/containerService');
 const pokeneaRepository = require('../repositories/pokeneaRepository');
 
 function show() {
