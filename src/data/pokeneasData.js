@@ -15,7 +15,7 @@ const pokeneasData = [
     name: 'Parcerín',
     height: 1.62,
     ability: 'Saludo infinito',
-    image: buildImageUrl('parcerin.png'),
+    image: buildImageUrl('parcerin.webp'),
     philosophicalPhrase: 'El que saluda primero nunca camina solo.',
   },
   {
@@ -23,7 +23,7 @@ const pokeneasData = [
     name: 'Arepíquez',
     height: 1.4,
     ability: 'Resistencia al hambre',
-    image: buildImageUrl('arepiquez.png'),
+    image: buildImageUrl('arepiquez.webp'),
     philosophicalPhrase: 'Toda masa necesita su tiempo en el fogón.',
   },
   {
@@ -31,7 +31,7 @@ const pokeneasData = [
     name: 'Chontadurok',
     height: 1.75,
     ability: 'Energía tropical',
-    image: buildImageUrl('chontadurok.png'),
+    image: buildImageUrl('chontadurok.webp'),
     philosophicalPhrase: 'Lo amargo también alimenta.',
   },
   {
@@ -39,7 +39,7 @@ const pokeneasData = [
     name: 'Metrolina',
     height: 1.9,
     ability: 'Puntualidad absoluta',
-    image: buildImageUrl('metrolina.png'),
+    image: buildImageUrl('metrolina.webp'),
     philosophicalPhrase: 'Llegar a tiempo es una forma de respeto.',
   },
   {
@@ -47,15 +47,15 @@ const pokeneasData = [
     name: 'Silletón',
     height: 2.05,
     ability: 'Carga pesada',
-    image: buildImageUrl('silleton.png'),
+    image: buildImageUrl('silleton.webp'),
     philosophicalPhrase: 'Quien carga flores también carga historia.',
   },
   {
     id: 6,
     name: 'Guayabita',
-    height: 1.25,
+    height: 1.25,  
     ability: 'Dulzura persistente',
-    image: buildImageUrl('guayabita.png'),
+    image: buildImageUrl('guayabita.webp'),
     philosophicalPhrase: 'Lo pequeño madura sin pedir permiso.',
   },
   {
@@ -63,7 +63,7 @@ const pokeneasData = [
     name: 'Nubarrón',
     height: 1.68,
     ability: 'Lluvia repentina',
-    image: buildImageUrl('nubarron.png'),
+    image: buildImageUrl('nubarron.webp'),
     philosophicalPhrase: 'El aguacero no avisa, pero siempre pasa.',
   },
   {
@@ -71,7 +71,7 @@ const pokeneasData = [
     name: 'Tinticienta',
     height: 1.55,
     ability: 'Despertar ajeno',
-    image: buildImageUrl('tinticienta.png'),
+    image: buildImageUrl('tinticienta.webp'),
     philosophicalPhrase: 'Un tinto a tiempo arregla más que un consejo.',
   },
 ];
