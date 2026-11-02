@@ -5,7 +5,7 @@ const appConfig = require('../config/appConfig');
  * @returns {string}
  */
 function buildImageUrl(fileName) {
-  return `${appConfig.imagesBaseUrl}/${fileName}`;
+  return `${appConfig.imagesBaseUrl}${fileName}`;
 }
 
 /** @type {import('../types').Pokenea[]} */
