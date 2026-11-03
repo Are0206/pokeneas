@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get(routePaths.pokeneaApiShow, pokeneaApiController.show);
 
-router.get(routePaths.pokeneaShow, pokeneaController.show)
+router.get(routePaths.pokeneaShow, pokeneaController.show);
 
 module.exports = router;
